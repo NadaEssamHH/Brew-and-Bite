@@ -1,113 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+@import "tailwindcss";
 
-:root {
-  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
-  
-  --color-amber-50: #FFFBEB;
-  --color-amber-100: #FEF3C7;
-  --color-amber-500: #F59E0B;
-  --color-amber-600: #D97706;
-  --color-amber-700: #B45309;
+@theme {
+  /* Brand colors (DESIGN.md) */
+  --color-primary: #2C1810;     /* espresso: text, buttons, prices */
+  --color-secondary: #C86432;   /* terracotta: accents, hover */
+  --color-tertiary: #5A6B4A;    /* sage: dietary badges only */
+  --color-canvas: #FAF7F2;      /* page background */
+  --color-surface: #FFFFFF;     /* cards */
+  --color-oat: #E8DFD5;         /* borders */
+  --color-cocoa: #6B584C;       /* muted text */
+  --color-chip: #F5EFEB;        /* filter chip background */
+  --color-error: #BA1A1A;
 
-  --color-espresso-900: #0F0C0A;
-  --color-espresso-800: #1A1512;
-  --color-espresso-700: #26201C;
-  --color-espresso-600: #3D332D;
+  /* Fonts */
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
-  --color-cream-100: #FAF6F0;
-  --color-cream-200: #F3ECE2;
-  --color-cream-300: #E6DBCB;
+  /* Radius */
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
 
-  --color-text-main: #2C2420;
-  --color-text-muted: #786C64;
-  --color-border: #E8DFD5;
-
-  --radius-sm: 8px;
-  --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-full: 9999px;
-
-  --shadow-sm: 0 2px 8px rgba(38, 32, 28, 0.05);
-  --shadow-md: 0 8px 24px rgba(38, 32, 28, 0.08);
-  --shadow-lg: 0 16px 32px rgba(38, 32, 28, 0.12);
-  --shadow-amber: 0 10px 25px -5px rgba(217, 119, 6, 0.3);
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  /* Shadows (espresso-tinted) */
+  --shadow-card: 0 2px 8px -2px rgba(44, 24, 16, 0.04);
+  --shadow-raised: 0 8px 24px -4px rgba(44, 24, 16, 0.08);
+  --shadow-modal: 0 16px 40px -8px rgba(44, 24, 16, 0.14);
 }
 
 body {
-  font-family: var(--font-heading);
-  background-color: var(--color-cream-100);
-  color: var(--color-text-main);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* Typography Helpers */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-espresso-900);
-  line-height: 1.25;
-}
-
-.font-serif {
-  font-family: var(--font-serif);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Glassmorphism Navigation */
-.nav-glass {
-  background: rgba(250, 246, 240, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(232, 223, 213, 0.8);
-}
-
-.dark-nav-glass {
-  background: rgba(15, 12, 10, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(61, 51, 45, 0.5);
-  color: #FAF6F0;
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.4s ease-out forwards;
-}
-
-@keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 15px rgba(217, 119, 6, 0.4); }
-  50% { box-shadow: 0 0 25px rgba(217, 119, 6, 0.7); }
-}
-
-.pulse-glow {
-  animation: pulseGlow 2.5s infinite;
-}
-
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-cream-200);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--color-amber-600);
-  border-radius: 4px;
+  background-color: var(--color-canvas);
+  color: var(--color-primary);
+  font-family: var(--font-sans);
 }
